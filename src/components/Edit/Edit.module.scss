@@ -1,0 +1,119 @@
+@import '../../styles/base/func';
+.edit {
+  margin-top: size(20);
+  @media #{max-width()} {
+    display: flex;
+    flex-direction: column;
+    gap: size(20);
+    padding-block: size(20);
+  }
+  .formGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: size(30);
+    .fileInput {
+      display: none;
+    }
+    .fileLabel {
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: size(20);
+    }
+  }
+  .editCover {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    @media #{max-width()} {
+      flex-direction: column;
+      gap: size(20);
+    }
+    .editInput {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: size(25);
+      @media #{max-width()} {
+        width: 100%;
+      }
+      h3{
+        text-decoration: underline;
+      }
+      .canvasColor{
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        gap: size(10);
+        select {
+          padding: size(5) size(10);
+          
+        }
+      }
+      .titleEdit,
+      .authorEdit{
+        display: flex;
+        flex-direction: column;
+        gap: size(25);
+        .fontSize,
+        .textColor,
+        .fontSpacing,
+        .textCenter {
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+          align-items: center;
+          gap: size(25);
+          color: var(--red);
+          input {
+            padding: size(5) size(10);
+          }
+          select {
+            padding: size(5) size(10);
+          }
+        }
+      }
+    }
+    .imagePreview {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      @media #{max-width()} {
+        width:100%;
+      }
+      .canvas {
+        width: size(550);
+        height: size(650);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        @media #{max-width()} {
+          width:100%;
+          height:size(400);
+        }
+        img {
+          position: relative;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: auto;
+          height: size(350);
+          @media #{max-width()} {
+            width:100%;
+            height:size(250);
+          }
+        }
+      }
+    }
+  }
+  .buttons{
+    display: flex;
+    justify-content: center;
+    gap: size(10);
+  }
+}

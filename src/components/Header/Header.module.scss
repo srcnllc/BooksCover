@@ -1,0 +1,33 @@
+@import '../../styles/base/func';
+  .header{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    ul{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media #{max-width()} {
+        flex-wrap: wrap;
+        gap: size(10);
+        margin-top: size(20);
+      }
+      li{
+        background-color: #ededed;
+        padding: size(20) size(25);
+        border: 3px solid black;
+        cursor: pointer;
+        font-size: size(25);
+        @media #{max-width()} {
+          padding: size(10) size(25);
+          font-size: size(15);
+
+        }
+        &.active{
+          background-color: #95bcf2;
+        }
+      }
+    }
+  }

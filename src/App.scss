@@ -1,0 +1,39 @@
+@media only screen and (min-width: 768px) {
+.App{
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(245, 247, 248);
+  display: flex;
+  gap: calc(var(--1) * 24);
+  padding-inline: calc(var(--1) * 24);
+  padding-block: calc(var(--1) * 24);
+  .content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: calc(var(--1) * 24);
+    section{
+      width: 100%;
+    }
+}
+}
+}
+@media only screen and (max-width: 767.98px) {
+  .App{
+    width: 100%;
+    background-color: rgb(245, 247, 248);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--dsm-1) * 0);
+    .content{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: calc(var(--dsm-1) * 24);
+      section{
+        width: 100%;
+      }
+  }
+  }
+}

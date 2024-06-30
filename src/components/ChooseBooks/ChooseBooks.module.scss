@@ -1,0 +1,18 @@
+@import '../../styles/base/func';
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 100px);
+    @media #{max-width()} {
+      height:size(300);
+    }
+    select{
+      padding: size(20) size(20);
+      border-radius: size(10);
+      outline: none;
+      background: none;
+      border: 1px solid black;
+    }
+  }

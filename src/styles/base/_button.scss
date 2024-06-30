@@ -1,0 +1,78 @@
+@import '../../styles/base/func';
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: size(14);
+  padding-inline: size(32);
+  border-radius: size(12);
+  gap: size(10);
+  background-color: var(--white);
+  color: var(--dark);
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-size: size(18);
+  line-height: size(24);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: none;
+  cursor: pointer;
+
+  &.white {
+    background-color: var(--white);
+    color: var(--dark);
+    &::after {
+      background-color: var(--dark);
+    }
+  }
+  &.green {
+    background-color: var(--green);
+    color: var(--dark);
+    &::after {
+      background-color: var(--dark);
+    }
+  }
+  &.dark {
+    background-color: var(--dark);
+    color: var(--white);
+    &::after {
+      background-color: var(--white);
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    background-color: var(--dark);
+    transition: all 300ms ease;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+  }
+  &:hover {
+    &::after {
+      width: 80%;
+      height: 300%;
+      transform: translate(-50%, -50%) rotate(20deg);
+      z-index: -1;
+      opacity: 0.2;
+    }
+  }
+
+  .icon {
+    position: relative;
+    display: flex;
+    width: size(24);
+    height: size(24);
+  }
+}
+.btn-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: size(10);
+}
