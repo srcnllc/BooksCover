@@ -1,4 +1,4 @@
-# TrainIQ Firmasına Case çalışmasıdır.
+# CyanGate  Firmasına Case çalışmasıdır.
 
 Terminalde ilk önce "npm i" komutu ile bağımlılık olan paketleri indiriniz.
 
