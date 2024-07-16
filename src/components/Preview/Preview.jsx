@@ -2,7 +2,7 @@ import React from 'react';
 import html2canvas from 'html2canvas';
 import styles from './Preview.module.scss';
 
-export default function Preview({ canvasColor, filePreview, selectedBook, titleStyles, authorStyles }) {
+export default function Preview({ canvasColor, filePreview, selectedBook, titleStyles, authorStyles ,positionTitle,positionauthor}) {
   const handleDownload = () => {
     const canvasElement = document.querySelector(`.${styles.canvas}`);
     html2canvas(canvasElement).then((canvas) => {
@@ -22,7 +22,8 @@ export default function Preview({ canvasColor, filePreview, selectedBook, titleS
                 fontSize: titleStyles.size,
                 color: titleStyles.color,
                 letterSpacing: titleStyles.letterSpacing,
-                textAlign: titleStyles.textAlign,
+                left: positionTitle.x,
+                top: positionTitle.y,
               }}
             >
               {selectedBook.title}
@@ -33,7 +34,8 @@ export default function Preview({ canvasColor, filePreview, selectedBook, titleS
                 fontSize: authorStyles.size,
                 color: authorStyles.color,
                 letterSpacing: authorStyles.letterSpacing,
-                textAlign: authorStyles.textAlign,
+                left: positionauthor.x,
+                top: positionauthor.y,
               }}
             >
               {selectedBook.author}

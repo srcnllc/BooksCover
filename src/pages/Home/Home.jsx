@@ -14,18 +14,29 @@ export default function Home({ data }) {
   const [filePreview, setFilePreview] = useState(null);
   const [selectedBook, setSelectedBook] = useState({ title: '', anchor: '' });
   const [canvasColor, setCanvasColor] = useState('black');
+  const [positionTitle, setPositionTitle] = useState({ x: 0, y: 0 });
+  const [positionauthor, setPositionauthor] = useState({ x: 0, y: 0 });
+  
   const [titleStyles, setTitleStyles] = useState({
     size: '22px',
     color: 'white',
     letterSpacing: '0px',
-    textAlign: 'center',
   });
   const [authorStyles, setAuthorStyles] = useState({
     size: '22px',
     color: 'white',
     letterSpacing: '0px',
-    textAlign: 'center',
   });
+
+
+
+  const handleStop = (e, data) => {
+    setPositionTitle({ x: data.x, y: data.y });
+  };
+  const handleStop2 = (e, data) => {
+    setPositionauthor({ x: data.x, y: data.y });
+
+  };
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -66,6 +77,10 @@ export default function Home({ data }) {
             setAuthorStyles={setAuthorStyles}
             canvasColor={canvasColor}
             setCanvasColor={setCanvasColor}
+            handleStop={handleStop}
+            handleStop2={handleStop2}
+
+            p
           />
         )}
         {activeIndex === 2 && (
@@ -81,6 +96,8 @@ export default function Home({ data }) {
             setAuthorStyles={setAuthorStyles}
             canvasColor={canvasColor}
             setCanvasColor={setCanvasColor}
+            positionTitle={positionTitle}
+            positionauthor={positionauthor}
           />
         )}
       </Container>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Edit.module.scss';
 import { MdInput } from 'react-icons/md';
-
+import Draggable from 'react-draggable';
 export default function Edit({
   canvasColor,
   setCanvasColor,
@@ -15,6 +15,8 @@ export default function Edit({
   authorStyles,
   setTitleStyles,
   setAuthorStyles,
+  handleStop,
+  handleStop2
 }) {
   const handleBackClick = () => {
     console.log('Selected Book ID:', selectedBook);
@@ -101,14 +103,6 @@ export default function Edit({
                   onChange={handleTitleStylesChange}
                 />
               </div>
-              <div className={styles.textCenter}>
-                <label htmlFor="align">Text Align</label>
-                <select name="textAlign" id="align" onChange={handleTitleStylesChange} value={titleStyles.textAlign}>
-                  <option value="left">Left</option>
-                  <option value="center">Center</option>
-                  <option value="right">Right</option>
-                </select>
-              </div>
             </div>
             <div className={styles.authorEdit}>
               <h4>Author Edit</h4>
@@ -143,39 +137,45 @@ export default function Edit({
                   onChange={handleAuthorStylesChange}
                 />
               </div>
-              <div className={styles.textCenter}>
-                <label htmlFor="align">Text Align</label>
-                <select name="textAlign" id="align" onChange={handleAuthorStylesChange} value={titleStyles.textAlign}>
-                  <option value="left">Left</option>
-                  <option value="center">Center</option>
-                  <option value="right">Right</option>
-                </select>
-              </div>
+
             </div>
           </div>
           <div className={styles.imagePreview}>
             <div className={styles.canvas} style={{ backgroundColor: canvasColor }}>
-              <h2
+            <Draggable
+              defaultPosition={{x: 0, y: 0}}
+              bounds="parent"
+              onStop={handleStop}
+
+            >
+            <h2
                 style={{
                   fontSize: titleStyles.size,
                   color: titleStyles.color,
                   letterSpacing: titleStyles.letterSpacing,
-                  textAlign: titleStyles.textAlign,
                 }}
               >
                 {selectedBook.title}
               </h2>
+          </Draggable>
+
               <img src={filePreview} alt="Cover preview" />
+              <Draggable
+              defaultPosition={{x: 0, y: 0}}
+              bounds="parent"
+              onStop={handleStop2}
+
+            >
               <h2
                 style={{
                   fontSize: authorStyles.size,
                   color: authorStyles.color,
                   letterSpacing: authorStyles.letterSpacing,
-                  textAlign: authorStyles.textAlign,
                 }}
               >
                 {selectedBook.author}
               </h2>
+              </Draggable>
             </div>
           </div>
         </div>

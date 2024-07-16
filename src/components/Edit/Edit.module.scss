@@ -92,9 +92,16 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        position: relative;
         @media #{max-width()} {
           width:100%;
           height:size(400);
+        }
+        h2{
+          width: max-content;
+          z-index: 555;
+          max-width: -webkit-fill-available;
+          cursor: pointer;
         }
         img {
           position: relative;
